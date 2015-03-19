@@ -6,6 +6,97 @@
 <link rel="stylesheet" type="text/css" media="screen" href="http://localhost/k2d-html-reports-framework/css-table.css" />
 <script type="text/javascript" src="http://localhost/k2d-html-reports-framework/js/jquery-1.2.6.min.js"></script>
 <script type="text/javascript" src="http://localhost/k2d-html-reports-framework/js/style-table.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var orgUnit = dhis2.report.organisationUnit;
+            var periods = dhis2.report.periods;
+            $("#orgUnit").html(orgUnit.name);
+            var period = periods[0];
+            $("#periods").html(periods[0]);
+            $.get("../api/analytics?dimension=pe:"+ period +"&dimension=dx:uHM6lzLXDBd;BQmcVE8fex4;yQFyyQBhXQf;otgQMOXuyIn;DuBH6qPPdaO;PggNwT09D3U;Nqt6rz4tqnm;cV4qoKSYiBs;M9wNpvfC8wb;uTQOSp7rx5h;T59McmnP4FJ;gAKCshSgSH3;EHGBrVPiG3N;ClGtVTu7QUe;eIvn8VgI5Zx;jI6RYlclUgr;oC215Fl92uW;CvoE5s0xLLf;bmFMhQa3G2v;GyIfu4qpXJM;Yq2bq0zZokF;NQOwqGwcBnN;TLiUok6zK9w;P0gfmezl6IV;P15TN95Ie3F;jaPrPmor6WV;rAZBTMa7Jy3;sMqM8DwiAaj;Kx64gGqaFVq;JvjczkbdPTy;mmqXlRfsXlf;UqKC1DJnymn;syjjPqXbjTm;Hh4daYAcb49;zVTIzkATPDS;k8qXy4LyyJj;eBHhfupqMHz;JzM8Q9sIc9i;xAAEwRrU8EH;d4KC4RIwpKH;jF2Uk71SaYC;AovozyLJEsh;qrTk1w6Y5Bk;Rreh0ozBjvf;xO4Kh84Bwlk;NeH2XNZ4B78;hkOr4aKHGvt;ND0kGuYLszx;OPII6vOKimx;MKICatwGRPz;lNNrYXr0Dnz;j6EvRpVJONr;s0Zi5NpklJN;rxhsRqFckMf;SI8igpKYhVG;JglserSm6IQ;LNOJnResD5m;rcfDxB8Hpuu;AY5ZPkANII8;YWGxnnD9KXb;rS1DZr9EZGG;xjlkLTQhA2b;KGRCdw30ILH;j1Vu1ZUZK0s;BRzqHfgsmn9;VihTrdMMli8;hNsd8cQIYun;BgFeMs6gQ7E;YDZlFPpGO2W;oq4vCrIRVxb;bhFvc6EeCTC;Mn3FQ9r5Wtp;KmLPBDUi48L;oiZ7R6su8ZX;aTBJvDJQAF0;IV9vOoO4Mo4;TkwjrwghYVF&tableLayout=true&columns=pe&rows=dx&filter=ou:" + orgUnit.id, function (json) {
+                    $("#fpmicrolut").html(json.rows[0][4]);
+                    $("#fpmicrogynon").html(json.rows[1][4]);
+                    $("#fpinjections").html(json.rows[2][4]);
+                    $("#fpiucdinsertion").html(json.rows[3][4]);
+                    $("#fpimplantsinsertion").html(json.rows[4][4]);
+                    $("#fpbtl").html(json.rows[5][4]);
+                    $("#fpvasectomy").html(json.rows[5][4]);
+                    $("#fpbtl").html(json.rows[6][4]);
+                    $("#fpcondoms").html(json.rows[7][4]);
+                    $("#fpallothers").html(json.rows[8][4]);
+                    $("#ancattendance").html(json.rows[9][4]);
+                    $("#anchbclients").html(json.rows[10][4]);
+                    $("#ancipt1st").html(json.rows[11][4]);
+                    $("#ancipt2nd").html(json.rows[12][4]);
+                    $("#anc4thvisit").html(json.rows[13][4]);
+                    $("#ancllitns").html(json.rows[14][4]);
+                    $("#stiudinitialvisit").html(json.rows[15][4]);
+                    $("#stiudreatt").html(json.rows[16][4]);
+                    $("#stiudreferrals").html(json.rows[17][4]);
+                    $("#stigudinitialvisit").html(json.rows[18][4]);
+                    $("#stigudreatt").html(json.rows[19][4]);
+                    $("#stigudreferrals").html(json.rows[20][4]);
+                    $("#stioninitialvisit").html(json.rows[21][4]);
+                    $("#stionreferrals").html(json.rows[22][4]);
+                    $("#stisyphilisserology").html(json.rows[23][4]);
+                    $("#normaldeliveries").html(json.rows[23][4]);
+                    $("#caesareansections").html(json.rows[24][4]);
+                    $("#breachdelivery").html(json.rows[25][4]);
+                    $("#assistedvaginaldelivery").html(json.rows[26][4]);
+                    $("#totaldeliveries").html(json.rows[27][4]);
+                    $("#livebirths").html(json.rows[28][4]);
+                    $("#stillbirths").html(json.rows[29][4]);
+                    $("#underweightbabies").html(json.rows[30][4]);
+                    $("#pretermbabies").html(json.rows[31][4]);
+                    $("#babiesdischargedalive").html(json.rows[32][4]);
+                    $("#maternityreferrals").html(json.rows[33][4]);
+                    //$("#neonataldeaths").html(json.rows[34][4]);
+                    $("#maternaldeaths").html(json.rows[34][4]);
+                    $("#aph").html(json.rows[35][4]);
+                    $("#pph").html(json.rows[36][4]);
+                    $("#eclampsia").html(json.rows[37][4]);
+                    $("#raptureduterus").html(json.rows[38][4]);
+                    $("#obstructedlabour").html(json.rows[39][4]);
+                    $("#sepsis").html(json.rows[40][4]);
+                    $("#vctcounselled").html(json.rows[42][4]);
+                    $("#vcttested").html(json.rows[43][4]);
+                    $("#vcthivpositive").html(json.rows[44][4]);
+                    $("#couplescounselled").html(json.rows[45][4]);
+                    $("#couplestested").html(json.rows[46][4]);
+                    $("#bothhiv+").html(json.rows[47][4]);
+                    $("#withdiscordant").html(json.rows[48][4]);
+                    $("#counselledoutpatient").html(json.rows[49][4]);
+                    $("#counselledinpatient").html(json.rows[50][4]);
+                    $("#testedoutpatient").html(json.rows[51][4]);
+                    $("#testedinpatient").html(json.rows[52][4]);
+                    $("#hiv+outpatient").html(json.rows[53][4]);
+                    $("#hiv+inpatient").html(json.rows[54][4]);
+                    $("#bsrbtc").html(json.rows[55][4]);
+                    $("#bsotherrbtc").html(json.rows[56][4]);
+                    $("#bsunitscreened").html(json.rows[57][4]);
+                    $("#bsunitstransfused").html(json.rows[58][4]);
+                    $("#bsunitscreenedhiv+").html(json.rows[59][4]);
+                    $("#bsunitscreenedhb").html(json.rows[60][4]);
+                    $("#bsunitscreenedhc").html(json.rows[61][4]);
+                    $("#bsunitscreenedsyphilis").html(json.rows[62][4]);
+                    $("#tbcasesdetected").html(json.rows[63][4]);
+                    $("#tbsmearpositive").html(json.rows[64][4]);
+                    $("#tbsmearnegative").html(json.rows[65][4]);
+                    $("#tbextrapulmonary").html(json.rows[66][4]);
+                    $("#tbretreatment").html(json.rows[67][4]);
+                    $("#tbtestedforhiv").html(json.rows[68][4]);
+                    $("#tbhivpositive").html(json.rows[69][4]);
+                    $("#tbcpt").html(json.rows[70][4]);
+                    $("#tbdefaulters").html(json.rows[71][4]);
+                    $("#tbcompletedttreatment").html(json.rows[72][4]);
+                    $("#tbdeaths").html(json.rows[73][4]);
+                    $("#tbdeaths").html(json.rows[74][4]);
+                    $("#marasmus").html(json.rows[75][4]);
+                    $("#kwashiorkor").html(json.rows[76][4]);
+
+                });
+        });
+</script>
 </head>
 
 <body>
@@ -52,7 +143,7 @@
         <tr>
         	<!-- <th scope="row">Motorbike, moped, scooter</th> -->
             <td>Pills Microlut</td>
-            <td>29</td>
+            <td><span id="fpmicrolut"></td>
             <td></td>
             <td>VCT clients Counselled</td>
             <td>19</td>
@@ -62,7 +153,7 @@
         <tr>
         	<!-- <th scope="row">Bicycle</th> -->
             <td>Pills Microgynon</td>
-            <td>24</td>
+            <td><span id="fpmicrogynon"></td>
             <td></td>
             <td>VCT clients Tested</td>
             <td>15</td>
@@ -72,7 +163,7 @@
         <tr>
         	<!-- <th scope="row">Bus and coach</th> -->
             <td>FP Injections</td>
-            <td>39</td>
+            <td><span id="fpinjections"></td>
             <td></td>
             <td>VCT HIV Positive</td>
             <td>33</td>
@@ -82,7 +173,7 @@
         <tr>
         	<!-- <th scope="row">National Rail</th> -->
             <td>Implants insertion</td>
-            <td>66</td>
+            <td>66<span id="fpimplantsinsertion"></td>
             <td></td>
             <td>VCT Couples Counselled</td>
             <td></td>
@@ -92,7 +183,7 @@
         <tr>
         	<!-- <th scope="row">Underground, tram, light rail</th> -->
             <td>IUCD insertion</td>
-            <td></td>
+            <td><span id="fpiucdinsertion"></td>
             <td></td>
             <td>VCT Couples Tested</td>
             <td>42</td>
@@ -110,7 +201,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>ANC Attendance</td>
-            <td>35</td>
+            <td><span id="ancattendance"></td>
             <td></td>
             <td>DTC Outpatient Counselled</td>
             <td>14</td>
@@ -119,7 +210,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Clients with Hb &lt;7g/dl</td>
-            <td>9</td>
+            <td><span id="anchbclients"></td>
             <td></td>
             <td>DTC Inpatient Counselled</td>
             <td>11</td>
@@ -128,7 +219,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Clients given IPT 1st Dose</td>
-            <td>4</td>
+            <td><span id="ancipt1st"></td>
             <td></td>
             <td>DTC Outpatient Tested</td>
             <td>47</td>
@@ -137,7 +228,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Clients given IPT 2nd Dose</td>
-            <td>16</td>
+            <td><span id="ancipt2nd"></td>
             <td></td>
             <td>DTC Inpatient Tested</td>
             <td></td>
@@ -146,7 +237,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Clients Completed 4th Antenatal Visit</td>
-            <td>-</td>
+            <td><span id="anc4thvisit"></td>
             <td></td>
             <td>DTC Outpatient HIV+ve</td>
             <td>7</td>
@@ -155,7 +246,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>LLITNs distributed to ANC clients</td>
-            <td></td>
+            <td><span id="ancllitns"></td>
             <td></td>
             <td>DTC Inpatient HIV+ve</td>
             <td>10</td>
@@ -171,7 +262,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Urethral discharge initial visit</td>
-            <td>41</td>
+            <td><span id="stiudinitialvisit"></td>
             <td></td>
             <td>TB cases detected</td>
             <td>1</td>
@@ -180,7 +271,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Urethral discharge Re-attendance</td>
-            <td></td>
+            <td><span id="stiudreatt"></td>
             <td></td>
             <td>Smear positive TB</td>
             <td></td>
@@ -188,7 +279,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Urethral discharge Referrals</td>
-            <td>36</td>
+            <td><span id="stiudreferrals"></td>
             <td></td>
             <td>Smear negative TB</td>
             <td>12</td>
@@ -197,7 +288,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Genital ulcer disease initial visit</td>
-            <td>16</td>
+            <td><span id="stiguinitialvisit"></td>
             <td></td>
             <td>Extra-Pulmonary TB patients</td>
             <td>12</td>
@@ -206,7 +297,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Genital ulcer disease Re-attendance</td>
-            <td>17</td>
+            <td><span id="stigureatt"></td>
             <td></td>
             <td>Re-treatment TB patients</td>
             <td>23</td>
@@ -215,7 +306,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Genital ulcer disease Referrals</td>
-            <td>6</td>
+            <td><span id="stigureferrals"></td>
             <td></td>
             <td>TB Patients tested for HIV</td>
             <td>6</td>
@@ -224,7 +315,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Ophthalmia Neonatorum initial visit</td>
-            <td>16</td>
+            <td><span id="stioninitialvisit"></td>
             <td></td>
             <td>TB patients HIV+ve</td>
             <td>-</td>
@@ -233,7 +324,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Ophthalmia Neonatorum Re-attendance</td>
-            <td></td>
+            <td><span id="stionreatt"></td>
             <td></td>
             <td>TB HIV patient on CPT</td>
             <td>-</td>
@@ -242,7 +333,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Ophthalmia Neonatorum Referrals</td>
-            <td></td>
+            <td><span id="stionreferrals"></td>
             <td></td>
             <td>Not Known Infant Feeding (12 months)</td>
             <td></td>
@@ -251,7 +342,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Syphilis Serology</td>
-            <td></td>
+            <td><span id="stisyphylisserology"></td>
             <td></td>
             <td>TB Defaulters</td>
             <td></td>
@@ -268,7 +359,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Normal Deliveries</td>
-            <td></td>
+            <td><span id="normaldeliveries"></td>
             <td></td>
             <td>TB deaths</td>
             <td></td>
@@ -277,14 +368,14 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Caesarean Sections</td>
-            <td></td>
+            <td><span id="caesareansections"></td>
             <td></td>
             <th scope="col" colspan="2" text-align="center"><b>Blood Safety</b></th>
         </tr>  
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Breach Delivery</td>
-            <td></td>
+            <td><span id="breachdelivery"></td>
             <td></td>
             <td>Blood unit collected from RBTC</td>
             <td></td>
@@ -293,7 +384,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Assisted Vaginal Delivery</td>
-            <td></td>
+            <td><span id="assistedvaginaldelivery"></td>
             <td></td>
             <td>Blood unit collected from other sources</td>
             <td></td>
@@ -302,7 +393,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Total Deliveries</td>
-            <td></td>
+            <td><span id="totaldeliveries"></td>
             <td></td>
             <td>Blood unit screen at Health facility</td>
             <td></td>
@@ -311,7 +402,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Live Births</td>
-            <td></td>
+            <td><span id="livebirths"></td>
             <td></td>
             <td>Blood units transfused</td>
             <td></td>
@@ -320,7 +411,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Still Births</td>
-            <td></td>
+            <td><span id="stillbirths"></td>
             <td></td>
             <td>Blood unit screen found HIV+ve</td>
             <td></td>
@@ -329,7 +420,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Underweight babies &lt;2500gms</td>
-            <td></td>
+            <td><span id="underweightbabies"></td>
             <td></td>
             <td>Blood unit screen for Hepatitis B</td>
             <td></td>
@@ -338,7 +429,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Pre-Term Babies</td>
-            <td></td>
+            <td><span id="pretermbabies"></td>
             <td></td>
             <td>Blood unit screen for Hepatitis C</td>
             <td></td>
@@ -347,7 +438,7 @@
         <tr>
             <!-- <th scope="row">Walk</th> -->
             <td>Babies Discharged Alive</td>
-            <td></td>
+            <td><span id="babiesdischargedalive"></td>
             <td></td>
             <td>Blood unit screen for syphilis</td>
             <td></td>
