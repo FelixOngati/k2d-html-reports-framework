@@ -6,6 +6,18 @@
 <link rel="stylesheet" type="text/css" media="screen" href="http://localhost/style-table-report/css-table.css" />
 <script type="text/javascript" src="http://localhost/style-table-report/js/jquery-1.2.6.min.js"></script>
 <script type="text/javascript" src="http://localhost/style-table-report/js/style-table.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var orgUnit = dhis2.report.organisationUnit;
+            var periods = dhis2.report.periods;
+            $("#orgUnit").html(orgUnit.name);
+            var period = periods[0];
+            $("#periods").html(periods[0]);
+            $.get("../api/analytics?dimension=pe:"+ period +"&dimension=dx:DrYHirleKid;szTUYhNllEM;kIAH4Z125lp;h4pR1wz1JQb;TJMdle70A7X;GCAkHwMAWM6;uok31uImF2O;nwSCWEbTq8N;A00MjWUoJu7;mg8w9DHE0ZD;BnPSZj7YWX4;otejvL1iCC5;BZ9EGLQPnvl;dba7gHtgiLi;JZDDuahVatz;FRRDdqayYnU;g62PclQcVba;HYyJiuoyiLb;BhaetsBTxPa;pRNSNEw9Qnk;xHzNEXBp4Hd;dU4uzYQRht0;luNOBTlQUu3;zuxd3VsX5Tg;o9XSl5xVCez;WvDEUeGbKND;DmzoPpXMH6H;XDBAu5ZHxVM;PrJOGNh7o2I;Gz58GjVpyHH;Q1PZPHZGp8B;gm5CUNLylIt;TanTUukvqDX;uoO5NPbpuyq;ey4GflRwYEc;mKYmcJw24EJ;tMgBJpBe9f3;uay9KC6l64J;s4PSItRrsPp;M5C1MuMx0DM;aU3yS6kF44S;QmHl67b1U16;O3vUJhJ4mSI;C8xQ25DfJ4c;niVwX6llpwW;Y6x3Qc60cny;KWfnVyJ6csJ;F9ZGgbM0Bg1;Ohw8wy7VWZE;gsErVZTbF94;UruaeNEOWvg;zNVfCUwiSTo;TQlJCHRG4GY;W8KZcGSjbkY;q43LfFAaL1F;Ivi4xwwsjNN;yPGhCvz2bX2;QTfUGmnpzCm;CNK6qMLzi8b;aYSUbhP7pHR;UcZIlgCJKLe;T0A5qEJdmN3;C1Dgj84Os5X;GDjrlqdYFOs;o7ZDPALZrcW;TqhUjblmU6n;cbUoZG6mlS7;QISrDYwXnMw;ISGNo6jMJlI;oTjp04eBIaV;SaWg0kEFNco;ZGwcRRlpCvM;JPOUUzWeGOl;C9Ekf3fTtvP;w4TM7TDCNra;YWW5WMSjO2q;RwTKRWWKGhn;p1wJaxpErlY;MY5Cq1UcLbk;pHCaA5yineM;m3sannZJcUn;LMg3WmDU9e0;vIYHoB1chrN;ccDP1mdtsGw;oZ1lP3c6aUy;RZzhjN1F54S;mQYi1xtsVU9;QXckt31EX4G;qa22HPZEy9F;a7bKRU1Cyy9;mVqxeaMf4eM;zSWnmIya1jy;e86oTpPw0Us;mL7cDqmhW9T;eEQVqOeYn7t;fljqlqnvpVp;HRV6CU24hpX;GN2mIjEutDL;jdar9eBpkum;dtgKdik9FzO;JuXiPTKkNKX;BVRZPJLuuu0&filter=ou:" + orgUnit.id, function (json) {
+
+                });
+        });
+</script>
 </head>
 
 <body>
